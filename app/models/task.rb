@@ -21,6 +21,12 @@ class Task < ActiveRecord::Base
 
   rails_admin do
 
+    show do
+      configure :result do
+        visible true
+      end
+    end
+
     edit do
       configure :status do
         visible false
