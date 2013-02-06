@@ -6,16 +6,7 @@ class TasksController < ApplicationController
     render :json => @tasks
   end
 
-  def start
-    @task = Task.find params[:id]
-    if @task.start
-      head :no_content
-    else
-      render json: @task.errors, status: :unprocessable_entity
-    end
-  end
-
-  def complete
+  def update
     @task = Task.find params[:id]
     if @task.update_attributes(result: params[:result])
       @task.complete!

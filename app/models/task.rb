@@ -7,15 +7,10 @@ class Task < ActiveRecord::Base
   aasm_column :status
   aasm do
     state :created, :initial => true
-    state :started
     state :completed
 
-    event :start do
-      transitions :from => :created, :to => :started
-    end
-
     event :complete do
-      transitions :from => :started, :to => :completed
+      transitions :from => :created, :to => :completed
     end
   end
 

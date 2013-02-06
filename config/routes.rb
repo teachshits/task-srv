@@ -1,20 +1,9 @@
 TaskSrv::Application.routes.draw do
-  get "tasks/update"
-
-  get "tasks/index"
-
-  get "tasks/show"
 
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
 
-  resources :tasks do
-    member do
-      post :start
-      post :complete
-    end
-
-  end
+  resources :tasks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
