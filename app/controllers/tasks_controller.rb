@@ -8,8 +8,7 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find params[:id]
-    if @task.update_attributes(result: params[:result])
-      @task.complete!
+    if @task.complete! && @task.update_attributes(result: params[:result])
       head :no_content
     else
       render json: @task.errors, status: :unprocessable_entity
