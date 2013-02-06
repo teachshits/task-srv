@@ -5,6 +5,7 @@ gem 'rails_admin'
 gem 'devise'
 gem 'aasm'
 gem 'capistrano'
+gem 'thin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
